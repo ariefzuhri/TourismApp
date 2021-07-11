@@ -4,11 +4,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.ariefzuhri.tourismapp.core.R
+import com.ariefzuhri.tourismapp.core.databinding.ItemListTourismBinding
 import com.bumptech.glide.Glide
-import com.dicoding.tourismapp.R
 import com.dicoding.tourismapp.core.domain.model.Tourism
-import com.dicoding.tourismapp.databinding.ItemListTourismBinding
-import java.util.ArrayList
+import java.util.*
 
 class TourismAdapter : RecyclerView.Adapter<TourismAdapter.ListViewHolder>() {
 
@@ -23,7 +23,9 @@ class TourismAdapter : RecyclerView.Adapter<TourismAdapter.ListViewHolder>() {
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
-        ListViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_list_tourism, parent, false))
+        ListViewHolder(
+            LayoutInflater.from(parent.context).inflate(R.layout.item_list_tourism, parent, false)
+        )
 
     override fun getItemCount() = listData.size
 
@@ -46,7 +48,7 @@ class TourismAdapter : RecyclerView.Adapter<TourismAdapter.ListViewHolder>() {
 
         init {
             binding.root.setOnClickListener {
-                onItemClick?.invoke(listData[adapterPosition])
+                onItemClick?.invoke(listData[layoutPosition])
             }
         }
     }

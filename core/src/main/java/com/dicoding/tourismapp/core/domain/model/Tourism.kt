@@ -1,10 +1,10 @@
 package com.dicoding.tourismapp.core.domain.model
 
 import android.os.Parcelable
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class Tourism (
+data class Tourism(
     val tourismId: String,
     val name: String,
     val description: String,
