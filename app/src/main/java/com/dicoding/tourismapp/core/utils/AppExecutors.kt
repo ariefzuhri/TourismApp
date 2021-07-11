@@ -6,7 +6,9 @@ import androidx.annotation.VisibleForTesting
 
 import java.util.concurrent.Executor
 import java.util.concurrent.Executors
+import javax.inject.Inject
 
+@Suppress("unused")
 class AppExecutors @VisibleForTesting constructor(
     private val diskIO: Executor,
     private val networkIO: Executor,
@@ -17,6 +19,7 @@ class AppExecutors @VisibleForTesting constructor(
         private const val THREAD_COUNT = 3
     }
 
+    @Inject
     constructor() : this(
         Executors.newSingleThreadExecutor(),
         Executors.newFixedThreadPool(THREAD_COUNT),
