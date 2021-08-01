@@ -52,4 +52,5 @@ android {
 
 dependencies {
     implementation project(":core")
+    implementation "com.airbnb.android:lottie:$lottie_version"
 }
